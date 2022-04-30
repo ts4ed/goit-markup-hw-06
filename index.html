@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,7 +25,8 @@
         <nav class="nav">
           <ul class="list">
             <li class="items">
-              <a class="link current" href="./index.html">Студия
+              <a class="link current" href="./index.html"
+                >Студия
                 <div class="border-current"></div>
               </a>
             </li>
@@ -75,6 +76,7 @@
       <!-- About us -->
       <section class="section about">
         <div class="container">
+          <h2 class="visually-hidden">Особенности</h2>
           <ul class="list">
             <li class="items">
               <div class="thumb">
@@ -129,7 +131,7 @@
           <ul class="list">
             <li class="items">
               <div class="thumb">
-                <img src="./images/box1.jpg" width="370" alt="Разработка" />
+                <img src="./images/box1.jpg" width="370" height="294" alt="Разработка" />
                 <div class="description">
                   <p class="item">Десктопные приложения</p>
                 </div>
@@ -137,7 +139,7 @@
             </li>
             <li class="items">
               <div class="thumb">
-                <img src="./images/box2.jpg" width="370" alt="Поддержка" />
+                <img src="./images/box2.jpg" width="370" height="294" alt="Поддержка" />
                 <div class="description">
                   <p class="item">Мобильные приложения</p>
                 </div>
@@ -145,7 +147,7 @@
             </li>
             <li class="items">
               <div class="thumb">
-                <img src="./images/box3.jpg" width="370" alt="Дизайн" />
+                <img src="./images/box3.jpg" width="370" height="294" alt="Дизайн" />
                 <div class="description">
                   <p class="item">Дизайнерские решения</p>
                 </div>
@@ -161,7 +163,7 @@
           <h2 class="section-title">Наша команда</h2>
           <ul class="list">
             <li class="items">
-              <img src="./images/team1.jpg" width="270" alt="Игорь" />
+              <img src="./images/team1.jpg" width="270" height="260" alt="Product Designer photo" />
               <h3 class="title">Игорь Демьяненко</h3>
               <p class="position">Product Designer</p>
               <div>
@@ -206,7 +208,12 @@
               </div>
             </li>
             <li class="items">
-              <img src="./images/team2.jpg" width="270" alt="Ольга" />
+              <img
+                src="./images/team2.jpg"
+                width="270"
+                height="260"
+                alt="Frontend Developer photo"
+              />
               <h3 class="title">Ольга Репина</h3>
               <p class="position">Frontend Developer</p>
               <div>
@@ -251,7 +258,7 @@
               </div>
             </li>
             <li class="items">
-              <img src="./images/team3.jpg" width="270" alt="Николай" />
+              <img src="./images/team3.jpg" width="270" height="260" alt="Marketing photo" />
               <h3 class="title">Николай Тарасов</h3>
               <p class="position">Marketing</p>
               <div>
@@ -296,7 +303,7 @@
               </div>
             </li>
             <li class="items">
-              <img src="./images/team4.jpg" width="270" alt="Михаил" />
+              <img src="./images/team4.jpg" width="270" height="260" alt="UI Designer photo" />
               <h3 class="title">Михаил Ермаков</h3>
               <p class="position">UI Designer</p>
               <div>
@@ -399,8 +406,16 @@
       <div class="container info">
         <a class="link logo" href="./index.html"><span class="blue">Web</span>Studio</a>
         <address class="address">
-          <p>г. Киев, пр-т Леси Украинки, 26</p>
           <ul class="list">
+            <li class="items-footer">
+              <a
+                class="link info map"
+                href="https://goo.gl/maps/AMvUKNJv9h5WxEZ98"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                >г. Киев, пр-т Леси Украинки, 26</a
+              >
+            </li>
             <li class="items-footer">
               <a class="link info" href="mailto:info@example.com">info@example.com</a>
             </li>
@@ -411,7 +426,7 @@
         </address>
       </div>
       <div class="container links">
-        <h2>присоединяйтесь</h2>
+        <h2 class="title-footer">присоединяйтесь</h2>
         <ul class="list">
           <li class="items">
             <a class="link" href="">
@@ -451,11 +466,23 @@
           </li>
         </ul>
       </div>
+
+      <div class="container-form">
+        <form class="submit js-speaker-form">
+          <label class="submit-label" for="mail">подпишитесь на рассылку</label>
+          <input class="input-submit" type="email" name="mail" id="mail" placeholder="E-mail" />
+          <button class="buttton-submit" type="submit">
+            Подписаться
+            <svg class="icon-submit">
+              <use href="./images/icons.svg#icon-subscribe"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
     </footer>
 
-
     <div class="backdrop is-hidden" data-modal>
-      <div class="modal" >
+      <div class="modal">
         <button class="button" data-modal-close>
           <svg class="exit">
             <use href="./images/icons.svg#icon-exit"></use>
@@ -465,10 +492,20 @@
     </div>
     <script src="./js/modal.js"></script>
     <script>
-      const { height: pageHeaderHeight } = document.querySelector(".header .container")
-      .getBoundingClientRect();
+      const { height: pageHeaderHeight } = document
+        .querySelector('.header .container')
+        .getBoundingClientRect();
 
       document.body.style.paddingTop = `${pageHeaderHeight}px`;
+    </script>
+    <script>
+      (() => {
+        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`));
+        });
+      })();
     </script>
   </body>
 </html>
