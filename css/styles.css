@@ -715,6 +715,7 @@ img {
   border-color: rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: border-color var(--transition);
+  fill: var(--accent-text-color);
 }
 .modal-item textarea {
   resize: none;
@@ -760,13 +761,12 @@ img {
   height: 100%;
 }
 .modal-item:hover,
-input:hover,
+.modal input:hover,
 textarea:hover {
   fill: var(--accent-text-color);
   border-color: var(--accent-text-color);
   color: var(--accent-text-color);
 }
-
 .modal-icon {
   position: absolute;
   left: 12px;
@@ -835,6 +835,4 @@ textarea:hover {
   border-color: var(--accent-text-color);
 }
 
-.modal .modal-input:focus {
-  fill: var(--accent-text-color);
-}
+
