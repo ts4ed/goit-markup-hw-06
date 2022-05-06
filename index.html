@@ -531,10 +531,10 @@
         </div>
         <div class="footer-item subscribe">
           <form class="submit js-speaker-form">
-            <label class="label-submit" for="mail">подпишитесь на рассылку</label>
+            <label class="label-submit social-title" for="mail">подпишитесь на рассылку</label>
             <div class="subscribe">
               <input class="input-submit" type="email" name="mail" id="mail" placeholder="E-mail" />
-              <button class="buttton-submit" type="submit">
+              <button class="hero-button" type="submit">
                 Подписаться
                 <svg class="icon-submit">
                   <use href="./images/icons.svg#icon-subscribe"></use>
@@ -546,75 +546,80 @@
       </div>
     </footer>
 
-    <div class="backdrop is-hidden" data-modal>
+    <!-- is-hidden -->
+    <div class="backdrop" data-modal>
       <div class="modal">
         <button class="button" data-modal-close>
           <svg class="exit">
             <use href="./images/icons.svg#icon-exit"></use>
           </svg>
         </button>
-        <h2 class="title-modal">Оставьте свои данные, мы вам перезвоним</h2>
+        <p class="title-modal">Оставьте свои данные, мы вам перезвоним</p>
         <div class="form-modal">
           <form class="form js-speaker-form">
             <ul class="list modal-list">
               <li class="modal-item">
                 <label for="text">
-                  <div class="modal-input">
+                  <span class="modal-input">
                     <input type="text" id="text" placeholder="" />
-                    <div>
-                      <p class="label-name">Имя</p>
+                    <span>
+                      <span class="label-name">Имя</span>
                       <svg class="modal-icon">
                         <use href="./images/icons.svg#icon-modal-name"></use>
                       </svg>
-                    </div>
-                  </div>
+                    </span>
+                  </span>
                 </label>
               </li>
               <li class="modal-item">
                 <label for="tel">
-                  <div class="modal-input">
+                  <span class="modal-input">
                     <input type="tel" id="tel" placeholder="" />
-                    <div>
-                      <p class="label-name">Телефон</p>
+                    <span>
+                      <span class="label-name">Телефон</span>
                       <svg class="modal-icon">
                         <use href="./images/icons.svg#icon-modal-phone"></use>
                       </svg>
-                    </div>
-                  </div>
+                    </span>
+                  </span>
                 </label>
               </li>
               <li class="modal-item">
                 <label for="mail-modal">
-                  <div class="modal-input">
+                  <span class="modal-input">
                     <input type="email" id="mail-modal" placeholder="" />
-                    <div>
-                      <p class="label-name">Почта</p>
+                    <span>
+                      <span class="label-name">Почта</span>
                       <svg class="modal-icon">
                         <use href="./images/icons.svg#icon-modal-mail"></use>
                       </svg>
-                    </div>
-                  </div>
+                    </span>
+                  </span>
                 </label>
               </li>
               <li class="modal-item">
-                <div class="modal-input">
+                <span class="modal-input">
                   <label class="coment" for="coment">
-                    <p class="label-name">Комментарий</p>
+                    <span class="label-name-coment">Комментарий</span>
                     <textarea name="coment" id="coment" placeholder="Введите текст"></textarea>
                   </label>
-                </div>
+                </span>
               </li>
             </ul>
-          
+            <div class="confirmation">
+              <label for="confirmation">
+                <input class="checkbox" type="checkbox" name="confirm" id="confirmation" />
+                <span class="checkbox-icon"></span>Соглашаюсь с рассылкой и принимаю<a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  >Условия договора</a
+                >
+              </label>
+            </div>
+            <button class="hero-button" type="submit">Отправить</button>
+          </form>
         </div>
-        <div class="confirmation">
-          <label for="confirmation">
-            <input class="checkbox" type="checkbox" name="" id="confirmation" />
-            <span class="checkbox-icon"></span>Соглашаюсь с рассылкой и принимаю<a href="" target="_blank" rel="noopener noreferrer nofollow">Условия договора</a>
-          </label>
-        </div>
-        <button class="modal-submit-button" type="submit">Отправить</button>
-        </form>
       </div>
     </div>
 
